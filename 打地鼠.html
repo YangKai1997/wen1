@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#big{
+				background: url(img/beijing.jpg) no-repeat;
+				width: 600px;
+				height: 500px;
+			}
+			li{
+				list-style: none;
+				float: left;
+				margin: 60px 10px;
+				position: relative;
+				
+			}
+			li span{
+				position: absolute;
+				left: 5px;
+				top: -28px;
+				display: none;
+			}
+			li span img{
+				width: 100px;
+				height: 80px;
+				border-radius: 80%;
+			}
+			#fen{
+				font-size: 30px;
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="big">
+			<ul>
+				<li><img src="img/keng.gif" alt="" /><span><img src="img/wen1.gif" alt="" /></span></li>
+				<li><img src="img/keng.gif" alt="" /><span><img src="img/wen1.gif" alt="" /></span></li>
+				<li><img src="img/keng.gif" alt="" /><span><img src="img/wen1.gif" alt="" /></span></li>
+				<li><img src="img/keng.gif" alt="" /><span><img src="img/wen1.gif" alt="" /></span></li>
+				<li><img src="img/keng.gif" alt="" /><span><img src="img/wen1.gif" alt="" /></span></li>
+				<li><img src="img/keng.gif" alt="" /><span><img src="img/wen1.gif" alt="" /></span></li>
+				<li><img src="img/keng.gif" alt="" /><span><img src="img/wen1.gif" alt="" /></span></li>
+				<li><img src="img/keng.gif" alt="" /><span><img src="img/wen1.gif" alt="" /></span></li>
+				<li><img src="img/keng.gif" alt="" /><span><img src="img/wen1.gif" alt="" /></span></li>
+				<li><img src="img/keng.gif" alt="" /><span><img src="img/wen1.gif" alt="" /></span></li>
+				<li><img src="img/keng.gif" alt="" /><span><img src="img/wen1.gif" alt="" /></span></li>
+				<li><img src="img/keng.gif" alt="" /><span><img src="img/wen1.gif" alt="" /></span></li>	
+			</ul>
+			
+		</div>
+		<div id="fen">积分:0</div>
+		<script>
+			var big=document.getElementById('big');
+			var ali=big.getElementsByTagName('li');
+			
+			var aspan=big.getElementsByTagName('span');
+			var fen=document.getElementById('fen');
+			var j=0;
+			function tiao(){
+			var sui=Math.round(Math.random()*(ali.length-1));
+
+			for(var i=0;i<aspan.length;i++){
+
+				aspan[i].style.display='none';	
+			}
+			aspan[sui].style.display="block";
+			aspan[sui].innerHTML="<img src='img/wen1.jpg'>";
+			
+			aspan[sui].onclick=function(){
+				aspan[sui].innerHTML="<img src='img/wen.jpg'>";
+				j=j+10;
+			}
+			fen.innerHTML='积分:'+j;
+			}
+			setInterval(function(){
+				tiao();
+			},1000);
+
+
+			
+			
+		
+		</script>
+	</body>
+</html>
